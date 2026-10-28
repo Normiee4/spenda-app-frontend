@@ -1,0 +1,235 @@
+   /* ============================================================
+      Sévings — Design Tokens
+      Source of truth: DESIGN.md (Token Governance Rule)
+      Naming follows DESIGN.md conventions:
+      Colors    --color-{role}
+      Shadows   --shadow-{role}
+      Spacing   --space-{n}
+      Typography --text-{scale}
+      ============================================================ */
+
+   :root {
+
+   /* ----------------------------------------------------------
+      1. COLORS — DESIGN.md › Design Tokens › Colors
+      ---------------------------------------------------------- */
+   --color-primary:        #1B4D3E; /* Buttons, headers, key UI — cool teal-green */
+   --color-secondary:      #4A6B6F; /* Cards, borders, secondary — cool sage-gray */
+   --color-accent:         #C96B4F; /* CTAs, FAB, warnings, active states — muted coral */
+   --color-accent-2:       #CCA74E; /* Savings bucket, positive growth — muted dandelion */
+   --color-background:     #EFF3F0; /* Screen background — cool off-white */
+   --color-surface:        #DFE4E0; /* Cards, modals, elevated surfaces — cool gray */
+   --color-on-primary:     #FFFFFF; /* Text/icons on primary fill */
+   --color-on-secondary:   #FFFFFF; /* Text/icons on secondary fill */
+   --color-on-accent:      #FFFFFF; /* Text/icons on accent fill */
+
+   /* ----------------------------------------------------------
+      2. SEMANTIC COLORS — DESIGN.md › Semantic Colors
+      ---------------------------------------------------------- */
+   --color-success: var(--color-primary);   /* Primary outlined style */
+   --color-info:    var(--color-accent);    /* Accent */
+   --color-warning: #C96B4F;                /* Muted orange (accent) */
+   --color-error:   #E74C3C;                /* Red */
+
+   /* ----------------------------------------------------------
+      3. ALLOCATION COLORS — DESIGN.md › Allocation Colors
+      Default split: 50 / 30 / 20 (Needs / Wants / Savings)
+      ---------------------------------------------------------- */
+   --color-bucket-needs:   var(--color-primary);  /* Food, Utility, School, Commute */
+   --color-bucket-wants:   var(--color-accent);   /* Clothing, Subscription, Entertainment */
+   --color-bucket-savings: var(--color-accent-2); /* Reserved — unspent budget carried over */
+   --allocation-needs:   50%;
+   --allocation-wants:   30%;
+   --allocation-savings: 20%;
+
+   /* ----------------------------------------------------------
+      4. SHADING — DESIGN.md › Shading Tokens
+      ---------------------------------------------------------- */
+   --shadow-primary:            rgba(27, 77, 62, 0.10);  /* Button/card hover, elevation 1 */
+   --shadow-primary-strong:     rgba(27, 77, 62, 0.20);  /* Modal overlays, elevation 2 */
+   --shadow-accent:             rgba(201, 107, 79, 0.12); /* FAB glow, CTA hover */
+   --shadow-accent-strong:      rgba(201, 107, 79, 0.25); /* Active press, feedback */
+   --shadow-surface:            rgba(223, 228, 224, 0.50); /* Card depth, soft shadows */
+   --shadow-neutral:            rgba(0, 0, 0, 0.06);      /* Subtle lift, elevation 1 */
+   --shadow-neutral-strong:     rgba(0, 0, 0, 0.12);      /* Menus, dropdowns, elevation 2 */
+   --shadow-neutral-heavy:      rgba(0, 0, 0, 0.22);      /* Bottom sheets, modals, elevation 3 */
+
+   /* Elevation levels (0 = none) */
+   --elevation-0: none;
+   --elevation-1: 0 1px 3px var(--shadow-neutral), 0 1px 2px var(--shadow-neutral);            /* Cards, buttons at rest */
+   --elevation-2: 0 3px 6px var(--shadow-neutral-strong), 0 2px 4px var(--shadow-neutral-strong); /* Hover, floating */
+   --elevation-3: 0 8px 24px var(--shadow-neutral-heavy), 0 4px 8px var(--shadow-neutral-heavy);  /* Modals, sheets */
+
+   /* Highlights */
+   --highlight-primary: rgba(27, 77, 62, 0.07);    /* Selected bg, focus rings */
+   --highlight-accent:  rgba(201, 107, 79, 0.08);  /* Active nav, pressed overlay */
+   --highlight-surface: rgba(223, 228, 224, 0.30); /* Card press feedback, swipe */
+
+   /* ----------------------------------------------------------
+      5. TEXT — Text colors used across prototypes
+      (Gray ramp pending definition in DESIGN.md)
+      ---------------------------------------------------------- */
+   --color-text:        #2C2C2C; /* Body / headings — Gray 700-900 range */
+   --color-text-muted:  #8A9190; /* Secondary text — Gray 500 range */
+   --color-text-faint:  rgba(138, 145, 144, 0.65); /* Placeholder — Gray 300 range */
+   --color-divider:     rgba(138, 145, 144, 0.28); /* Borders, dividers — Gray 200 range */
+   --color-error-soft:  rgba(231, 76, 60, 0.08);   /* Error background tint */
+
+   /* ----------------------------------------------------------
+      6. SPACING — DESIGN.md › Spacing (Rule of 4)
+      ---------------------------------------------------------- */
+   --space-0:  0px;
+   --space-1:  4px;
+   --space-2:  8px;
+   --space-3:  12px;
+   --space-4:  16px;
+   --space-5:  20px;
+   --space-6:  24px;
+   --space-8:  32px;
+   --space-10: 40px;
+   --space-12: 48px;
+
+   /* Semantic spacing relationships (prototypes) */
+   --sp-element:  4px;  /* Within a component (icon ↔ label) */
+   --sp-group:    8px;  /* Between related items */
+   --sp-section:  12px; /* Between card sections */
+   --sp-wrapper:  16px; /* Between cards/groups */
+   --sp-page:     24px; /* Page edge padding */
+
+   /* ----------------------------------------------------------
+      7. TYPOGRAPHY — DESIGN.md › Typography
+      Primary: Roboto (display/headings) · Secondary: Inter (body)
+      ---------------------------------------------------------- */
+   --font-display: "Roboto", "Helvetica Neue", Arial, sans-serif;
+   --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+
+   --text-xs:  12px; /* Captions, labels */
+   --text-sm:  14px; /* Body small, secondary text */
+   --text-base: 16px; /* Body default */
+   --text-lg:  20px; /* Subheadings, emphasis */
+   --text-xl:  24px; /* Headings, titles */
+
+   /* Extended scale (used in prototypes — pending DESIGN.md approval) */
+   --text-2xl: 28px;
+   --text-3xl: 36px;
+
+   --leading-tight: 1.2;
+   --leading-normal: 1.5;
+   --leading-relaxed: 1.65;
+
+   --weight-regular: 400;
+   --weight-medium: 500;
+   --weight-bold: 700;
+
+   /* ----------------------------------------------------------
+      8. RADII — pending definition in DESIGN.md
+      ---------------------------------------------------------- */
+   --radius-sm: 8px;
+   --radius-md: 12px;
+   --radius-lg: 16px;
+   --radius-xl: 20px;
+   --radius-full: 9999px;
+
+   /* ----------------------------------------------------------
+      9. CLAY + MATERIAL SHADOWS — style: Soft UI Evolution
+      Claymorphism (playful) + Material (data-heavy)
+      ---------------------------------------------------------- */
+   --clay-sm:    3px 3px 6px rgba(27, 77, 62, 0.08), -1px -1px 4px rgba(255, 255, 255, 0.70);
+   --clay-md:    5px 5px 12px rgba(27, 77, 62, 0.10), -2px -2px 6px rgba(255, 255, 255, 0.80);
+   --clay-lg:    7px 7px 18px rgba(27, 77, 62, 0.12), -3px -3px 8px rgba(255, 255, 255, 0.90);
+   --clay-inset: inset 2px 2px 5px rgba(27, 77, 62, 0.06), inset -1px -1px 3px rgba(255, 255, 255, 0.60);
+   --mat-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+   --mat-2: 0 3px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+   --mat-3: 0 8px 16px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.10);
+
+   /* ----------------------------------------------------------
+      10. MOTION — DESIGN.md › Animations
+      ---------------------------------------------------------- */
+   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+   --ease-emphasis: cubic-bezier(0.3, 0, 0.1, 1);
+   --ease-exit:     cubic-bezier(0.4, 0, 1, 1);
+   --duration-fast:   150ms;
+   --duration-base:   250ms;
+   --duration-slow:   400ms;
+   --duration-success: 600ms; /* Fade/scale success feedback */
+
+   /* ----------------------------------------------------------
+      11. TOUCH TARGETS — DESIGN.md › Touch Target Minimums
+      ---------------------------------------------------------- */
+   --touch-target: 48px;        /* Mobile (sm) */
+   --touch-target-tablet: 44px; /* md */
+   --touch-target-desktop: 36px;/* lg/xl */
+   --list-item-height: 56px;    /* Mobile list rows */
+
+   /* ----------------------------------------------------------
+      12. GRID — DESIGN.md › Responsive Tokens (mobile-first)
+      ---------------------------------------------------------- */
+   --grid-columns: 4;
+   --grid-gutter: 16px;
+   --grid-margin: 16px;
+   --text-scale: 1;
+   --breakpoint-sm: 640px;
+   --breakpoint-md: 1024px;
+   --breakpoint-lg: 1440px;
+
+   /* ----------------------------------------------------------
+      13. PROTOTYPE COMPATIBILITY ALIASES
+      Names used by existing sevings-*.html inline :root blocks.
+      Keeps old markup working when this file is linked first.
+      ---------------------------------------------------------- */
+   --primary:      var(--color-primary);
+   --primary-light:#235E4A; /* Lightened primary (mascot/buttons hover) */
+   --secondary:    var(--color-secondary);
+   --accent:       var(--color-accent);
+   --accent2:      var(--color-accent-2);
+   --bg:           var(--color-background);
+   --surface:      var(--color-surface);
+   --text:         var(--color-text);
+   --muted:        var(--color-text-muted);
+   --error:        var(--color-error);
+   --success:      var(--color-success);
+   --surface-tan:  var(--color-divider);
+   --error-soft:   var(--color-error-soft);
+
+   /* Semantic spacing aliases (older wireframe naming) */
+   --sp-1:  var(--space-1);
+   --sp-2:  var(--space-2);
+   --sp-3:  var(--space-3);
+   --sp-4:  var(--space-4);
+   --sp-5:  var(--space-5);
+   --sp-6:  var(--space-6);
+   --sp-8:  var(--space-8);
+   --sp-10: var(--space-10);
+   --sp-12: var(--space-12);
+   }
+
+   /* ------------------------------------------------------------
+      RESPONSIVE OVERRIDES — DESIGN.md › Responsive Tokens
+      ------------------------------------------------------------ */
+   @media (min-width: 640px) { /* md / Tablet */
+   :root {
+      --grid-columns: 8;
+      --grid-gutter: 24px;
+      --grid-margin: 32px;
+      --touch-target: var(--touch-target-tablet);
+      --text-scale: 1;
+   }
+   }
+   @media (min-width: 1024px) { /* lg / Laptop */
+   :root {
+      --grid-columns: 16;
+      --grid-gutter: 24px;
+      --grid-margin: 48px;
+      --touch-target: var(--touch-target-desktop);
+      --text-scale: 1.05;
+   }
+   }
+   @media (min-width: 1440px) { /* xl / Desktop */
+   :root {
+      --grid-columns: 24;
+      --grid-gutter: 24px;
+      --grid-margin: auto;
+      --touch-target: var(--touch-target-desktop);
+      --text-scale: 1.1;
+   }
+   }
